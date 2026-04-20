@@ -7,11 +7,15 @@ package com.chathilaw.smartcampus.resources;
 import com.chathilaw.smartcampus.dao.MockDatabase;
 import com.chathilaw.smartcampus.model.Room;
 import com.chathilaw.smartcampus.model.Sensor;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -58,5 +62,23 @@ public class SensorResource {
         return Response.status(Response.Status.CREATED)
                 .entity(sensor)
                 .build();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSensors(@QueryParam("type") String type) {
+        List<Sensor> result;
+        
+        if (type != null && !type.trim().isEmpty()) {
+            // Filter sensors by type
+            result = sensors.values().stream()
+                    .filter(sensor -> type.equalsIgnoreCase(sensor.getType()))
+                    .collect(Collectors.toList());
+        } else {
+            // Return all sensors if no type is provided
+            result = sensors.values().stream().collect(Collectors.toList());
+        }
+
+        return Response.ok(result).build();
     }
 }
