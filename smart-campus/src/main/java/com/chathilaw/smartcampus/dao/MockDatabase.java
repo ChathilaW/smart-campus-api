@@ -6,8 +6,10 @@ package com.chathilaw.smartcampus.dao;
 
 import com.chathilaw.smartcampus.model.Room;
 import com.chathilaw.smartcampus.model.Sensor;
+import com.chathilaw.smartcampus.model.SensorReading;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,7 +21,8 @@ public class MockDatabase {
 
     private static Map<String, Sensor> sensors = new HashMap<>();
     
-    // for add static maps for SensorReadings later
+    // Map of sensorId -> List of SensorReadings
+    private static Map<String, List<SensorReading>> sensorReadings = new HashMap<>();
 
     static {
         // Pre-populating with some realistic mock data to make testing easier
@@ -35,5 +38,9 @@ public class MockDatabase {
     
     public static Map<String, Sensor> getSensors() {
         return sensors;
+    }
+    
+    public static Map<String, List<SensorReading>> getSensorReadings() {
+        return sensorReadings;
     }
 }

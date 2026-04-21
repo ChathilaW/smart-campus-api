@@ -7,6 +7,7 @@ package com.chathilaw.smartcampus.resources;
 import com.chathilaw.smartcampus.dao.MockDatabase;
 import com.chathilaw.smartcampus.model.Room;
 import com.chathilaw.smartcampus.model.Sensor;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -80,5 +82,11 @@ public class SensorResource {
         }
 
         return Response.ok(result).build();
+    }
+    
+    @Path("/{sensorId}/readings")
+    public SensorReadingResource getSensorReadingResource(@PathParam("sensorId") String sensorId) {
+        // Return a new instance of the sub-resource locator
+        return new SensorReadingResource(sensorId);
     }
 }
