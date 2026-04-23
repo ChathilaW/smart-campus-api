@@ -15,6 +15,6 @@
 
     <servlet-mapping>
         <servlet-name>Smart-Campus</servlet-name>
-        <url-pattern>/api/v1/</url-pattern>
+        <url-pattern>/api/v1/*</url-pattern>
     </servlet-mapping>
 </web-app>
