@@ -5,6 +5,7 @@
 package com.chathilaw.smartcampus.resources;
 
 import com.chathilaw.smartcampus.dao.MockDatabase;
+import com.chathilaw.smartcampus.exception.RoomNotEmptyException;
 import com.chathilaw.smartcampus.model.Room;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -86,12 +87,7 @@ public class SensorRoomResource {
 
         // Business Logic Constraint: Cannot delete if active sensors are assigned
         if (room.getSensorIds() != null && !room.getSensorIds().isEmpty()) {
-            Map<String, String> responseObj = new HashMap<>();
-            responseObj.put("error", "Room still has active sensors assigned. Deletion blocked.");
-            
-            // TODO: Part 5 Custom Error Response
-            // Will update this block to throw/return the custom error structure once Part 5 is reached.
-            return Response.status(Response.Status.CONFLICT).entity(responseObj).build();
+            throw new RoomNotEmptyException("The room is currently occupied by active hardware.");
         }
 
         // Successful Deletion
