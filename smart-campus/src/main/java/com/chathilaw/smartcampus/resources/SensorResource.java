@@ -5,6 +5,7 @@
 package com.chathilaw.smartcampus.resources;
 
 import com.chathilaw.smartcampus.dao.MockDatabase;
+import com.chathilaw.smartcampus.exception.LinkedResourceNotFoundException;
 import com.chathilaw.smartcampus.model.Room;
 import com.chathilaw.smartcampus.model.Sensor;
 
@@ -43,9 +44,7 @@ public class SensorResource {
 
         // Verify that the roomId exists in the system
         if (!rooms.containsKey(sensor.getRoomId())) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("Room ID " + sensor.getRoomId() + " does not exist.")
-                    .build();
+            throw new LinkedResourceNotFoundException("Room ID " + sensor.getRoomId() + " does not exist.");
         }
 
         // Optional: Check if sensor ID already exists
