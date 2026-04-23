@@ -5,6 +5,7 @@
 package com.chathilaw.smartcampus.resources;
 
 import com.chathilaw.smartcampus.dao.MockDatabase;
+import com.chathilaw.smartcampus.exception.SensorUnavailableException;
 import com.chathilaw.smartcampus.model.Sensor;
 import com.chathilaw.smartcampus.model.SensorReading;
 
@@ -62,6 +63,11 @@ public class SensorReadingResource {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Sensor with ID " + sensorId + " not found.")
                     .build();
+        }
+        
+        // Check for State Constraint (403 Forbidden)
+        if ("MAINTENANCE".equalsIgnoreCase(sensor.getStatus())) {
+            throw new SensorUnavailableException("Sensor is currently under maintenance and cannot accept new readings.");
         }
 
         // Add to history
