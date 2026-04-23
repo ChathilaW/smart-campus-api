@@ -29,6 +29,7 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
         );
 
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                .type(javax.ws.rs.core.MediaType.APPLICATION_JSON)
                 .entity(errorMessage)
                 .build();
     }
