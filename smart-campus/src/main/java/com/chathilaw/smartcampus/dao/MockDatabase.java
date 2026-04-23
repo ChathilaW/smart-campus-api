@@ -26,10 +26,14 @@ public class MockDatabase {
 
     static {
         // Pre-populating with some realistic mock data to make testing easier
-        Room r1 = new Room("LIB-301", "Library Quiet Study", 20, new ArrayList<>());
+        Room r1 = new Room("LIB-301", "Library", 20, new ArrayList<>());
         Room r2 = new Room("LAB-101", "Main Computer Lab", 40, new ArrayList<>());
+        Room r3 = new Room("HALL-301", "Lecture Hall 2LA", 120, new ArrayList<>());
+        Room r4 = new Room("HALL-101", "Lecture Hall 3LA", 120, new ArrayList<>());
         rooms.put(r1.getId(), r1);
         rooms.put(r2.getId(), r2);
+        rooms.put(r3.getId(), r3);
+        rooms.put(r4.getId(), r4);
     }
 
     public static Map<String, Room> getRooms() {
