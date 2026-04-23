@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.chathilaw.smartcampus.dao;
+package com.chathilaw.smartcampus.database;
 
 import com.chathilaw.smartcampus.model.Room;
 import com.chathilaw.smartcampus.model.Sensor;

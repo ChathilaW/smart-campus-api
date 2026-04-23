@@ -4,7 +4,7 @@
  */
 package com.chathilaw.smartcampus.resources;
 
-import com.chathilaw.smartcampus.dao.MockDatabase;
+import com.chathilaw.smartcampus.database.MockDatabase;
 import com.chathilaw.smartcampus.exception.SensorUnavailableException;
 import com.chathilaw.smartcampus.model.Sensor;
 import com.chathilaw.smartcampus.model.SensorReading;

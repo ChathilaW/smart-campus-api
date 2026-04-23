@@ -4,7 +4,7 @@
  */
 package com.chathilaw.smartcampus.resources;
 
-import com.chathilaw.smartcampus.dao.MockDatabase;
+import com.chathilaw.smartcampus.database.MockDatabase;
 import com.chathilaw.smartcampus.exception.LinkedResourceNotFoundException;
 import com.chathilaw.smartcampus.model.Room;
 import com.chathilaw.smartcampus.model.Sensor;
