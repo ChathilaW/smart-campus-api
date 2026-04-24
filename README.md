@@ -46,27 +46,27 @@ smart-campus-api
 │   │       ├── java/
 │   │       │   └── com/
 │   │       │       └── chathilaw/
-│   │	     │		        └── smartcampus/
+│   │	     │ 		        └── smartcampus/
 │   │       │               ├── config
 │   │       │               │     └── JAXRSConfiguration.java
-│   │       │           	  ├── database/
-│   │       │           	  │   └── MockDatabase.java
-│   │       │           	  ├── exception/
-│   │       │           	  │   ├── GlobalExceptionMapper.java
-│   │       │           	  │   ├── LinkedResourceNotFoundException.java
-│   │       │           	  │   ├── LinkedResourceNotFoundExceptionMapper.java
-│   │       │           	  │   ├── RoomNotEmptyException.java
-│   │       │           	  │   ├── RoomNotEmptyExceptionMapper.java
-│   │       │           	  │   ├── SensorUnavailableException.java
-│   │       │           	  │   └── SensorUnavailableExceptionMapper.java
-│   │       │           	  ├── filter/
-│   │       │           	  │   └── LoggingFilter.java
-│   │       │           	  ├── model/
-│   │       │           	  │   ├── ErrorMessage.java
-│   │       │           	  │   ├── Room.java
-│   │       │           	  │   ├── Sensor.java
-│   │       │           	  │   └── SensorReading.java
-│   │       │           	  └── resource/
+│   │       │           	 ├── database/
+│   │       │           	 │   └── MockDatabase.java
+│   │       │           	 ├── exception/
+│   │       │           	 │   ├── GlobalExceptionMapper.java
+│   │       │           	 │   ├── LinkedResourceNotFoundException.java
+│   │       │           	 │   ├── LinkedResourceNotFoundExceptionMapper.java
+│   │       │           	 │   ├── RoomNotEmptyException.java
+│   │       │           	 │   ├── RoomNotEmptyExceptionMapper.java
+│   │       │           	 │   ├── SensorUnavailableException.java
+│   │       │           	 │   └── SensorUnavailableExceptionMapper.java
+│   │       │           	 ├── filter/
+│   │       │           	 │   └── LoggingFilter.java
+│   │       │           	 ├── model/
+│   │       │           	 │   ├── ErrorMessage.java
+│   │       │           	 │   ├── Room.java
+│   │       │           	 │   ├── Sensor.java
+│   │       │           	 │   └── SensorReading.java
+│   │       │           	 └── resource/
 │   │       │               	  ├── DiscoveryResource.java
 │   │       │               	  ├── SensorRoomResource.java
 │   │       │               	  ├── SensorReadingResource.java
