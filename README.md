@@ -40,41 +40,37 @@ The implementation covers:
 ```
 
 smart-campus-api
-
 │ smart-campus/
 │   ├── src/
 │   │   └── main/
 │   │       ├── java/
 │   │       │   └── com/
 │   │       │       └── chathilaw/
-
-│   │	    │		└── smartcampus/
-
-│   │       │			├── config
-
-│   │       │			│   └── JAXRSConfiguration.java
-│   │       │           	├── database/
-│   │       │           	│   └── MockDatabase.java
-│   │       │           	├── exception/
-│   │       │           	│   ├── GlobalExceptionMapper.java
-│   │       │           	│   ├── LinkedResourceNotFoundException.java
-│   │       │           	│   ├── LinkedResourceNotFoundExceptionMapper.java
-│   │       │           	│   ├── RoomNotEmptyException.java
-│   │       │           	│   ├── RoomNotEmptyExceptionMapper.java
-│   │       │           	│   ├── SensorUnavailableException.java
-│   │       │           	│   └── SensorUnavailableExceptionMapper.java
-│   │       │           	├── filter/
-│   │       │           	│   └── LoggingFilter.java
-│   │       │           	├── model/
-│   │       │           	│   ├── ErrorMessage.java
-│   │       │           	│   ├── Room.java
-│   │       │           	│   ├── Sensor.java
-│   │       │           	│   └── SensorReading.java
-│   │       │           	└── resource/
-│   │       │               	    ├── DiscoveryResource.java
-│   │       │               	    ├── SensorRoomResource.java
-│   │       │               	    ├── SensorReadingResource.java
-│   │       │               	    └── SensorResource.java
+│   │	      │		        └── smartcampus/
+│   │       │               ├── config
+│   │       │               │     └── JAXRSConfiguration.java
+│   │       │           	  ├── database/
+│   │       │           	  │   └── MockDatabase.java
+│   │       │           	  ├── exception/
+│   │       │           	  │   ├── GlobalExceptionMapper.java
+│   │       │           	  │   ├── LinkedResourceNotFoundException.java
+│   │       │           	  │   ├── LinkedResourceNotFoundExceptionMapper.java
+│   │       │           	  │   ├── RoomNotEmptyException.java
+│   │       │           	  │   ├── RoomNotEmptyExceptionMapper.java
+│   │       │           	  │   ├── SensorUnavailableException.java
+│   │       │           	  │   └── SensorUnavailableExceptionMapper.java
+│   │       │           	  ├── filter/
+│   │       │           	  │   └── LoggingFilter.java
+│   │       │           	  ├── model/
+│   │       │           	  │   ├── ErrorMessage.java
+│   │       │           	  │   ├── Room.java
+│   │       │           	  │   ├── Sensor.java
+│   │       │           	  │   └── SensorReading.java
+│   │       │           	  └── resource/
+│   │       │               	  ├── DiscoveryResource.java
+│   │       │               	  ├── SensorRoomResource.java
+│   │       │               	  ├── SensorReadingResource.java
+│   │       │               	  └── SensorResource.java
 │   │       │   
 │   │       └── webapp/
 │   │           ├── META-INF/
@@ -84,13 +80,9 @@ smart-campus-api
 │   │           │   └── web.xml
 │   │           └── index.html
 │   ├── nb-configuration.xml
-
 │   └── pom.xml 
-
 │
-
 ├──.gitignore
-
 └── README.md
 
 
