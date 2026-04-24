@@ -5,11 +5,12 @@
 package com.chathilaw.smartcampus.exception;
 
 /**
- *
+ * Custom exception thrown when attempting to delete a room that still has sensors assigned to it.
+ * 
  * @author Chathila Wijesinghe
  */
 public class RoomNotEmptyException extends RuntimeException {
-    public RoomNotEmptyException(String message) {
-        super(message);
+    public RoomNotEmptyException(String message) { // Constructor accepting an error message
+        super(message); // Delegates the message to the superclass constructor
     }
 }

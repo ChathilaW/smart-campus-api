@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.chathilaw.smartcampus.resources; // Defines the package for JAX-RS resources
+package com.chathilaw.smartcampus.resources;
 
 import com.chathilaw.smartcampus.database.MockDatabase; // Imports the MockDatabase for data storage access
 import com.chathilaw.smartcampus.exception.SensorUnavailableException; // Imports custom exception for maintenance state errors

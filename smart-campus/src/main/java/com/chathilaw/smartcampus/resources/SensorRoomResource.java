@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.chathilaw.smartcampus.resources; // Defines the package for JAX-RS resources
+package com.chathilaw.smartcampus.resources;
 
 import com.chathilaw.smartcampus.database.MockDatabase; // Imports the mocked database singleton
 import com.chathilaw.smartcampus.exception.RoomNotEmptyException; // Imports exception for deleting rooms with active sensors
 import com.chathilaw.smartcampus.model.Room; // Imports the Room model class
+
 import java.util.ArrayList; // Imports ArrayList implementation
 import java.util.HashMap; // Imports HashMap implementation
 import java.util.List; // Imports List interface
@@ -29,7 +30,7 @@ import javax.ws.rs.core.Response; // Class for building advanced HTTP responses
 @Path("/rooms") // Base URI path for this entire resource class
 @Produces(MediaType.APPLICATION_JSON) // Sets a class-level default response format to JSON
 @Consumes(MediaType.APPLICATION_JSON) // Sets a class-level default request format to JSON
-public class SensorRoomResource { // Declares the public resource class
+public class SensorRoomResource {
 
     // Connecting to the centralized MockDatabase
     private Map<String, Room> roomDatabase = MockDatabase.getRooms(); // Local reference to the simulated rooms table

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.chathilaw.smartcampus.resources; // Declares the package for JAX-RS resources
+package com.chathilaw.smartcampus.resources;
 
 import com.chathilaw.smartcampus.database.MockDatabase; // Imports the simulated database class
 import com.chathilaw.smartcampus.exception.LinkedResourceNotFoundException; // Imports custom exception for invalid foreign keys
@@ -28,7 +28,7 @@ import javax.ws.rs.core.Response; // Represents an HTTP response with status cod
  * @author Chathila Wijesinghe
  */
 @Path("/sensors") // Sets the base path for all endpoints in this class to /api/v1/sensors
-public class SensorResource { // Public class declaration for the Sensor REST endpoints
+public class SensorResource {
 
     private Map<String, Sensor> sensors = MockDatabase.getSensors(); // Retrieves the in-memory map of sensors
     private Map<String, Room> rooms = MockDatabase.getRooms(); // Retrieves the in-memory map of rooms for validation

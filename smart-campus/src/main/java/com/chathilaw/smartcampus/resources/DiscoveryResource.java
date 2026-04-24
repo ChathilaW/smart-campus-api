@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.chathilaw.smartcampus.resources; // Defines the package for the JAX-RS resource classes
+package com.chathilaw.smartcampus.resources;
 
 import java.util.HashMap; // Imports HashMap for key-value pair data structures
 import java.util.Map; // Imports the Map interface
@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType; // Imports MediaType constants like applicati
  * @author Chathila Wijesinghe
  */
 @Path("/") // Maps this resource to the base API path (e.g., /api/v1/)
-public class DiscoveryResource { // Defines the public DiscoveryResource class
+public class DiscoveryResource {
 
     @GET // Indicates that this method responds to HTTP GET requests
     @Produces(MediaType.APPLICATION_JSON) // Specifies that the response body will be in JSON format
