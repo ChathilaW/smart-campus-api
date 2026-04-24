@@ -218,31 +218,41 @@ curl -X POST http://localhost:8080/smart-campus/api/v1/rooms \\\\
   -H "Content-Type: application/json" \\\\
   -d '{"id":"AUD","name":"Auditorium","capacity":600}'
 
-# 4. Filter sensors by type
-curl -X GET "http://localhost:8080/smart-campus/api/v1/sensors?type=Temperature"
+# 4. Create a new sensor (POST)
+curl -X POST http://localhost:8080/smart-campus/api/v1/rooms \\\\
+  -H "Content-Type: application/json" \\\\
+  -d '{"id": "TEMP-001", "roomId": "AUD", "type": "Temperature", "status": "ACTIVE", "currentValue": 21.0}'
 
-# 5. Post a sensor reading (updates parent sensor's currentValue)
-curl -X POST http://localhost:8080/smart-campus/api/v1/sensors/LIB-1LA/readings \\\\
+# 5. Create a new sensor of maintainence (POST)
+curl -X POST http://localhost:8080/smart-campus/api/v1/rooms \\\\
+  -H "Content-Type: application/json" \\\\
+  -d '{"id": "TEMP-002", "roomId": "LIB-1LA", "type": "Temperature", "status": "MAINTENANCE", "currentValue": 21.0}'
+
+# 6. Post a sensor reading (updates parent sensor's currentValue)
+curl -X POST http://localhost:8080/smart-campus/api/v1/sensors/AUD/readings \\\\
   -H "Content-Type: application/json" \\\\
   -d '{"id":"RD-001","timestamp":"7200","value":26.3}'
 
-# 6. Trigger 409 Conflict — attempt to delete a room that has sensors
+# 7. Trigger 403 Forbidden — post reading to a MAINTENANCE sensor
+curl -X POST http://localhost:8080/smart-campus/api/v1/sensors/LIB-1LA/readings \\\\
+  -H "Content-Type: application/json" \\\\
+ -d '{"id":"RD-002","timestamp":"7200","value":26.3}'
+
+# 8. Trigger 409 Conflict — attempt to delete a room that has sensors
 curl -X DELETE http://localhost:8080/smart-campus/api/v1/rooms/LIB-1LA
 
-# 7. Trigger 422 Unprocessable Entity — sensor referencing non-existent room
+# 9. Trigger 422 Unprocessable Entity — sensor referencing non-existent room
 curl -X POST http://localhost:8080/smart-campus/api/v1/sensors \\\\
   -H "Content-Type: application/json" \\\\
-  -d '{"id":"BAD-001","type":"CO2","status":"ACTIVE","currentValue":0.0,"roomId":"FAKE-999"}'
+  -d '{"id": "TEMP-002", "roomId": "FAKE ROOM", "type": "Temperature", "status": "MAINTENANCE", "currentValue": 21.0}'
 
-# 8. Trigger 403 Forbidden — post reading to a MAINTENANCE sensor
-curl -X POST http://localhost:8080/smart-campus/api/v1/sensors/OCC-001/readings \\\\
-  -H "Content-Type: application/json" \\\\
-  -d '{"value":15.0}'
+# 10. Filter sensors by type
+curl -X GET "http://localhost:8080/smart-campus/api/v1/sensors?type=Temperature"
 
-# 9. Trigger 500 Internal Server Error — global safety net demonstration
+# 11. Trigger 500 Internal Server Error — global safety net demonstration
 curl -X GET "http://localhost:8080/smart-campus/api/v1/?triggerError=true"
 
-# 10. Delete a room with no sensors
+# 12. Delete a room with no sensors
 curl -X DELETE http://localhost:8080/smart-campus/api/v1/rooms/HALL-2LA
 
 
