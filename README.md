@@ -33,11 +33,8 @@ The implementation covers:
 |JSON|Jackson (jersey-media-json-jackson)|
 |IDE|Apache NetBeans 28|
 
-\---
-
 ## Project Structure
 
-```
 
 smart-campus-api
 │ smart-campus/
@@ -85,13 +82,7 @@ smart-campus-api
 ├──.gitignore
 └── README.md
 
-
-
-```
-
-\\---
 Build \& Run Instructions
----
 
 ### Prerequisites
 
@@ -101,9 +92,7 @@ Build \& Run Instructions
 
 ### Step 1 — Clone the repository
 
-```bash
 git clone https://github.com/ChathilaW/smart-campus-api.git
-```
 
 ### Step 2 — Open in NetBeans
 
@@ -131,21 +120,16 @@ Right-click the project root → **Run**. The server starts and deploys the WAR 
 
 Open a browser or Postman and navigate to:
 
-```
-http://localhost:8080/smart-campus/api/v1/
-```
+http://localhost:8080/smart-campus/api/v1
 
 You should receive a JSON discovery response confirming the API is live.
 
-\---
+
 
 ## API Base URL
 
-```
 http://localhost:8080/smart-campus/api/v1
-```
 
-\---
 
 ## API Endpoints Reference
 
@@ -189,7 +173,6 @@ http://localhost:8080/smart-campus/api/v1
 |Any unexpected runtime error|500 Internal Server Error|`GlobalExceptionMapper<Throwable>`|
 |GET non-existent resource|404 Not Found|JAX-RS `NotFoundException` (via GlobalMapper)|
 
-\---
 
 ## Seed Data (Pre-loaded on startup)
 
@@ -200,11 +183,8 @@ http://localhost:8080/smart-campus/api/v1
 * `HALL-2LA` — Lecture Hall 2LA (capacity: 120)
 * `HALL-3LA` — Lecture Hall 3LA (capacity: 120)
 
-\---
-
 ## Sample curl Commands
 
-```bash
 # 1. Discovery endpoint
 curl -X GET http://localhost:8080/smart-campus/api/v1/
 
@@ -241,10 +221,7 @@ curl -X POST http://localhost:8080/smart-campus/api/v1/sensors/OCC-001/readings 
 curl -X GET "http://localhost:8080/smart-campus/api/v1/?triggerError=true"
 
 # 10. Delete a room with no sensors
-curl -X DELETE http://localhost:8080/smart-campus/api/v1/rooms/HALL-2LA
 
-
-```
 
 
 
