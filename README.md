@@ -46,7 +46,7 @@ smart-campus-api
 │   │       ├── java/
 │   │       │   └── com/
 │   │       │       └── chathilaw/
-│   │	      │		        └── smartcampus/
+│   │	     │		        └── smartcampus/
 │   │       │               ├── config
 │   │       │               │     └── JAXRSConfiguration.java
 │   │       │           	  ├── database/
