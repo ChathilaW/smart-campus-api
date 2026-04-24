@@ -257,6 +257,7 @@ Answers to the questions posed in each section of the coursework specification.
 ## Part 1.1
 
 By default, a JAX-RS resource class follows a per-request lifecycle, meaning the runtime creates a new instance of the resource class for each incoming HTTP request. This approach promotes statelessness and helps ensure thread safety, since each request operates on its own separate object. As a result, any instance variables defined within the resource class are short-lived and are discarded once the request is completed.
+
 Because of this behavior, instance variables cannot be used to persist data across multiple requests. To maintain shared in-memory data such as maps or lists, developers must either declare these structures as static or move them into a shared component, such as a service annotated with @Singleton. This allows the data to exist beyond the lifecycle of a single request.
 However, sharing data across requests introduces concurrency concerns, since application servers process multiple requests simultaneously using multiple threads. Without proper handling, this can lead to race conditions, data corruption, or inconsistent application state. To avoid these issues, it is important to use thread-safe data structures such as ConcurrentHashMap or CopyOnWriteArrayList, or to apply synchronization mechanisms when performing more complex operations.
 In summary, while the per-request lifecycle simplifies thread safety at the resource level, any shared state must be carefully managed to ensure safe concurrent access.
